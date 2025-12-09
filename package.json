@@ -1,24 +1,21 @@
 {
   "name": "eshopping-management-system",
   "version": "1.0.0",
-  "description": "E-Shopping Management System with DevOps Pipeline",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1"
-  },
-  "devDependencies": {
-    "jest": "^30.2.0",
-    "nodemon": "^3.1.11",
-    "supertest": "^7.1.4"
-  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   }
 }
